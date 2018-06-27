@@ -20,3 +20,13 @@ win32_kernel.h
 gl_imgui.cpp
 . InitImgui() initializes IMGUI if Opengl context & functions are availible. 
   IT DOES NOT DO KEYMAPPING, IT ONLY HANDLES THE GRAPHICS PART OF THE INIT CODE.
+
+ch_math.h
+. maths functions extracted from kernel.h
+
+ch_bmp.h
+. a small bmp writer
+
+ch_gl.h
+. opengl related functions and loaders extracted from kernel.h
+

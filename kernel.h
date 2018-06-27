@@ -1245,6 +1245,42 @@ Lerp(v3 A, v3 B, f32 T)
     return Result;
 }
 
+inline f32
+Max(v3 V)
+{
+    return Max(Max(V.X, V.Y), V.Z);
+}
+
+inline v3
+ApplyMat4(v3 V, mat4 Mat)
+{
+    v4 _V = {V.X, V.Y, V.Z, 1.0f};
+    _V *= Mat;
+    return V3(_V);
+}
+
+inline b32
+QuadraticIsSolvable(f32 A, f32 B, f32 C)
+{
+    f32 SquareRootInnerTerm = B*B - 4.0f*A*C;
+    return (SquareRootInnerTerm >= 0.0f && A != 0.0f);
+}
+
+inline v2
+SolveForQuadraticRoots(f32 A, f32 B, f32 C)
+{
+    v2 Result = {};
+    ASSERT(QuadraticIsSolvable(A, B, C));
+    
+    f32 SquareRootTerm = SquareRoot(B*B - 4.0f*A*C);
+    f32 FirstRoot = (-B + SquareRootTerm) / (2.0f * A);
+    f32 SecondRoot = (-B - SquareRootTerm) / (2.0f * A);
+    
+    Result.X = FirstRoot;
+    Result.Y = SecondRoot;
+    return Result;
+}
+
 //
 //
 // @OpenGL decl
