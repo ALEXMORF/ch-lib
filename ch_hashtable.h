@@ -1,4 +1,23 @@
 #pragma once
+
+/*
+NOTE: sample usage code:
+
+ch::hash_table<int> Table = {};
+Table.Push("Hello", 1);
+Table.Push("World", 2);
+
+assert(Table["Hello"] == 1);
+assert(Table["World"] == 2);
+
+Table["Hello"] = 100;
+assert(Table["Hello"] == 100);
+
+assert(Table.Contains("Hello"));
+assert(!Table.Contains("Something"));
+
+*/
+
 #include <stdint.h>
 #include <string.h>
 #include <assert.h>
