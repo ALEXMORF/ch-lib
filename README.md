@@ -13,16 +13,14 @@ kernel.h
 . 3D math functions. vectors, matrices, quaternions, etc.
 . Some Opengl helper functions 
 
-win32_kernel.h
-. Windows helper functions. Such as Win32CreateWindow(), Win32ToggleFullscreen() 
-  Win32InitializeOpengl(), etc.
+ch_win32.h
+. win32 helpers such as window creation, window toggles.
 
-gl_imgui.cpp
-. InitImgui() initializes IMGUI if Opengl context & functions are availible. 
-  IT DOES NOT DO KEYMAPPING, IT ONLY HANDLES THE GRAPHICS PART OF THE INIT CODE.
+ch_d3d12.h
+. d3d12 helpers and gpu context structure for multi-frame in flight rendering
 
 ch_math.h
-. maths functions extracted from kernel.h
+. math stuff
 
 ch_bmp.h
 . a small bmp writer
