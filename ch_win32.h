@@ -65,9 +65,9 @@ namespace ch
     }
     
     static HWND 
-        InitWindow(int ClientWidth, int ClientHeight, 
-                   char *Title, char *ClassName, 
-                   WNDPROC Win32WindowCallback)
+        Win32InitWindow(int ClientWidth, int ClientHeight, 
+                        char *Title, char *ClassName, 
+                        WNDPROC Win32WindowCallback)
     {
         HMODULE Instance = GetModuleHandleA(0);
         

@@ -51,8 +51,8 @@ Win32WindowCallback(HWND Window, UINT Message,
 
 int main()
 {
-    HWND Window = ch::InitWindow(800, 600, "Example", "Example Class",
-                                 Win32WindowCallback);
+    HWND Window = ch::Win32InitWindow(800, 600, "Example", "Example Class",
+                                      Win32WindowCallback);
     if (!Window)
     {
         printf("Failed to open window\n");
