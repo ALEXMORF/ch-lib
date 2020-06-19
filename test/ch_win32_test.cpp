@@ -53,6 +53,12 @@ int main()
 {
     HWND Window = ch::InitWindow(800, 600, "Example", "Example Class",
                                  Win32WindowCallback);
+    if (!Window)
+    {
+        printf("Failed to open window\n");
+        return -1;
+    }
+    
     HDC WindowDC = GetDC(Window);
     
     while (!gAppIsDone)
@@ -70,7 +76,7 @@ int main()
         uint32_t *BackBuffer = (uint32_t *)calloc(Width*Height, sizeof(uint32_t));
         for (int PixelI = 0; PixelI < Width*Height; ++PixelI)
         {
-            BackBuffer[PixelI] = 0x10101010;
+            BackBuffer[PixelI] = 0x20202020;
         }
         ch::Win32BlitBufferToScreen(WindowDC, BackBuffer, Width, Height);
         free(BackBuffer);
